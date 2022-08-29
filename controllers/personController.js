@@ -1,6 +1,7 @@
 const People = require('../models/people');
 var fs = require('fs');
 var path = require('path');
+var fetch = require('node-fetch');
 
 const getAllPeople = async (req, res) => {
     let people = await People.find();
