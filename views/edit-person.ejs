@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>PersonCRUD</title>
+</head>
+<body class="bg-dark">
+
+    <div id="content" class="m-5 rounded justify-content-around">
+        <form action="/edit/<%= p.id %>" method="POST">
+            <input type="hidden" name="id" value="<%= p.id %>">
+        <div class="person text-center m-1 mt-2 mb-2">
+            <img class="personimg" src="<%= p.picture %>" alt="">
+            <hr>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text ms-2 mb-2">Name</span>
+                </div>
+                <input type="text" name="name" class="form-control me-2 mb-2" placeholder="<%= p.name %>">
+                </div>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text ms-2 mb-2">Email</span>
+                </div>
+                <input type="text" name="email" class="form-control me-2 mb-2" placeholder="<%= p.email %>">
+                </div>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text ms-2 mb-2">Number</span>
+                </div>
+                <input type="text" name="phone" class="form-control me-2 mb-2" placeholder="<%= p.phone %>">
+                </div>
+            <button class="btn btn-warning w-50" type="submit">Edit</button>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>

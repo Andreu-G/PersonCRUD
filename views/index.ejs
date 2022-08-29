@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>PersonCRUD</title>
+</head>
+<body class="bg-dark">
+
+    <%- include ('partials/navbar') %>
+
+    <h4 class="fw-bold m-5 text-light">This Generator generates a new, randomized person everytime you click on the "<i class="text-success">Add Person</i>" button. That person's details is then added to a <i class="text-info">MongoDB</i> database, and you can edit those details or remove the person entirely by clicking on the <i class="text-danger">Delete person</i> button.</h4>
+    <h4 class="fw-bold m-5 text-light"></h4>
+
+
+    <div id="content" class="m-5 rounded justify-content-around">
+
+    <% people.forEach(p => { %>
+            <div class="person text-center m-1 mt-2 mb-2">
+                <img class="personimg" src="<%= p.picture %>" alt="">
+                <hr>
+                <div class="fw-bold">Name:</div>
+                <div><%= p.name %></div>
+                <div class="fw-bold">Email:</div>
+                <div><%= p.email %></div>
+                <div class="fw-bold">Phone Number:</div>
+                <div><%= p.phone %></div>
+                <a class="btn btn-warning" href="/edit/<%= p.id %>">Edit</a>
+                <a class="btn btn-danger" href="/remove/<%= p.id %>">Remove</a>
+            </div>
+    <% }); %>
+    </div>
+
+</body>
+</html>
