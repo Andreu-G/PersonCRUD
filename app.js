@@ -2,7 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var app = express();
-app.listen(3000);
+app.listen(process.env.port || 80);
 var personRouter = require('./router/personRouter');
 var database = require('./database/database');
 
